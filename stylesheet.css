@@ -1,0 +1,64 @@
+/* Week HP: pixel-art health bar with 5 segments (Monday to Friday) */
+
+.week-hp-box {
+    spacing: 6px;
+}
+
+.week-hp-icon {
+    icon-size: 14px;
+    color: #ff4d6d;
+}
+
+.week-hp-icon.complete {
+    color: #ffd700;
+}
+
+/* Outer frame: solid 8/16-bit style border */
+.week-hp-frame {
+    spacing: 2px;
+    padding: 2px;
+    background-color: #1a1a1a;
+    border: 2px solid #f0f0f0;
+    border-radius: 0;
+}
+
+/* Each segment is one day; the empty part stays dark */
+.week-hp-segment {
+    width: 14px;
+    height: 10px;
+    background-color: #3a3a3a;
+}
+
+/* Segment fill; its width is set from applet.js */
+.week-hp-fill {
+    height: 10px;
+    background-color: #e63946;
+}
+
+.week-hp-fill.mid {
+    background-color: #f4c430;
+}
+
+.week-hp-fill.high {
+    background-color: #3ddc55;
+}
+
+.week-hp-fill.complete {
+    background-color: #3ddc55;
+}
+
+.week-hp-label {
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 10pt;
+    text-align: center;
+}
+
+/* Narrow vertical panels: smaller text, on two lines */
+.week-hp-label.vertical {
+    font-size: 8pt;
+}
+
+.week-hp-label.complete {
+    color: #ffd700;
+}

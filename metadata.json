@@ -1,0 +1,9 @@
+{
+    "uuid": "week-hp@asterion",
+    "name": "Week HP",
+    "description": "A retro 2D platformer health bar in the panel that fills up from Monday to Friday, when your weekly goals are complete.",
+    "author": "asterion",
+    "website": "https://github.com/asterion/week-hp",
+    "version": "1.0",
+    "max-instances": 1
+}
