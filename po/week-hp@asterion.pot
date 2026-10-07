@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-07 12:12-0300\n"
+"POT-Creation-Date: 2026-10-07 19:24-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,36 +17,44 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: applet.js:48
+#: applet.js:54
 msgid "Mon"
 msgstr ""
 
-#: applet.js:50
+#: applet.js:56
 msgid "Tue"
 msgstr ""
 
-#: applet.js:52
+#: applet.js:58
 msgid "Wed"
 msgstr ""
 
-#: applet.js:54
+#: applet.js:60
 msgid "Thu"
 msgstr ""
 
-#: applet.js:56
+#: applet.js:62
 msgid "Fri"
 msgstr ""
 
-#: applet.js:176
+#: applet.js:64
+msgid "Sat"
+msgstr ""
+
+#: applet.js:66
+msgid "Sun"
+msgstr ""
+
+#: applet.js:189
 msgid "GOAL!"
 msgstr ""
 
-#: applet.js:176
+#: applet.js:189
 #, javascript-format
 msgid "%s %d%%"
 msgstr ""
 
-#: applet.js:183
+#: applet.js:196
 #, javascript-format
 msgid ""
 "%s\n"
@@ -74,6 +82,10 @@ msgstr ""
 
 #. settings-schema.json->section-colors->title
 msgid "Colors"
+msgstr ""
+
+#. settings-schema.json->section-reset->title
+msgid "Reset"
 msgstr ""
 
 #. settings-schema.json->work-days->units
@@ -199,4 +211,14 @@ msgstr ""
 
 #. settings-schema.json->goal-color->tooltip
 msgid "Color of the star and the GOAL! message when the week is complete."
+msgstr ""
+
+#. settings-schema.json->restore-defaults->description
+msgid "Restore default values"
+msgstr ""
+
+#. settings-schema.json->restore-defaults->tooltip
+msgid ""
+"Set every option back to its original value: schedule, bar appearance and "
+"colors."
 msgstr ""

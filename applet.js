@@ -16,6 +16,22 @@ const UUID = 'week-hp@asterion';
 const ICON_SIZE = 14;
 const MIN_UPDATE_INTERVAL_S = 10;
 
+// Keys of settings-schema.json and the applet property each one is bound to
+const SETTINGS = {
+    'work-days': 'workDays',
+    'day-start-hour': 'dayStartHour',
+    'day-end-hour': 'dayEndHour',
+    'last-day-end-hour': 'lastDayEndHour',
+    'segment-width': 'segmentWidth',
+    'update-interval': 'updateInterval',
+    'mid-threshold': 'midThreshold',
+    'high-threshold': 'highThreshold',
+    'fill-low-color': 'fillLowColor',
+    'fill-mid-color': 'fillMidColor',
+    'fill-high-color': 'fillHighColor',
+    'goal-color': 'goalColor',
+};
+
 Gettext.bindtextdomain(UUID, `${GLib.get_home_dir()}/.local/share/locale`);
 
 function _(text) {
@@ -28,18 +44,8 @@ class WeekHpApplet extends Applet.Applet {
         this.setAllowedLayout(Applet.AllowedLayout.BOTH);
 
         this._settings = new Settings.AppletSettings(this, UUID, instanceId);
-        this._settings.bind('work-days', 'workDays');
-        this._settings.bind('day-start-hour', 'dayStartHour');
-        this._settings.bind('day-end-hour', 'dayEndHour');
-        this._settings.bind('last-day-end-hour', 'lastDayEndHour');
-        this._settings.bind('segment-width', 'segmentWidth');
-        this._settings.bind('update-interval', 'updateInterval');
-        this._settings.bind('mid-threshold', 'midThreshold');
-        this._settings.bind('high-threshold', 'highThreshold');
-        this._settings.bind('fill-low-color', 'fillLowColor');
-        this._settings.bind('fill-mid-color', 'fillMidColor');
-        this._settings.bind('fill-high-color', 'fillHighColor');
-        this._settings.bind('goal-color', 'goalColor');
+        for (const [key, property] of Object.entries(SETTINGS))
+            this._settings.bind(key, property);
         this._settings.connect('settings-changed', () => this._on_settings_changed());
         this._applyConfig();
 
@@ -54,11 +60,11 @@ class WeekHpApplet extends Applet.Applet {
             _('Thu'),
             // Translators: abbreviated weekday shown in the panel
             _('Fri'),
+            // Translators: abbreviated weekday, only shown if the work week has more than five days
+            _('Sat'),
+            // Translators: abbreviated weekday, only shown if the work week has more than five days
+            _('Sun'),
         ];
-        // Saturday and Sunday, only shown if the work week has more than five days
-        const now = GLib.DateTime.new_now_local();
-        const monday = now.add_days(1 - now.get_day_of_week());
-        this._dayNames.push(monday.add_days(5).format('%a'), monday.add_days(6).format('%a'));
 
         const iconsDir = Gio.File.new_for_path(metadata.path).get_child('icons');
         this._heartIcon = new Gio.FileIcon({file: iconsDir.get_child('heart-symbolic.svg')});
@@ -101,6 +107,13 @@ class WeekHpApplet extends Applet.Applet {
             this._segments.forEach(segment => segment.set_style(`width: ${this.segmentWidth}px;`));
         this._restartTimer();
         this._update();
+    }
+
+    // Called by the "Restore default values" button of the settings dialog
+    on_restore_defaults_clicked() {
+        for (const key of Object.keys(SETTINGS))
+            this._settings.setValue(key, this._settings.getDefaultValue(key));
+        this._on_settings_changed();
     }
 
     _applyConfig() {

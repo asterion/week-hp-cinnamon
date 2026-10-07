@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-01 19:49-0300\n"
+"POT-Creation-Date: 2026-10-07 19:24-0300\n"
 "PO-Revision-Date: 2026-10-01 19:43-0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -17,36 +17,44 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: applet.js:33
+#: applet.js:54
 msgid "Mon"
 msgstr "Lun"
 
-#: applet.js:35
+#: applet.js:56
 msgid "Tue"
 msgstr "Mar"
 
-#: applet.js:37
+#: applet.js:58
 msgid "Wed"
 msgstr "Mer"
 
-#: applet.js:39
+#: applet.js:60
 msgid "Thu"
 msgstr "Jeu"
 
-#: applet.js:41
+#: applet.js:62
 msgid "Fri"
 msgstr "Ven"
 
-#: applet.js:111
+#: applet.js:64
+msgid "Sat"
+msgstr "Sam"
+
+#: applet.js:66
+msgid "Sun"
+msgstr "Dim"
+
+#: applet.js:189
 msgid "GOAL!"
 msgstr "OBJECTIF !"
 
-#: applet.js:111
+#: applet.js:189
 #, javascript-format
 msgid "%s %d%%"
 msgstr "%s %d %%"
 
-#: applet.js:118
+#: applet.js:196
 #, javascript-format
 msgid ""
 "%s\n"
@@ -56,14 +64,153 @@ msgstr ""
 "%d %%"
 
 #. metadata.json->name
+#. settings-schema.json->page-general->title
 msgid "Week HP"
 msgstr ""
 
 #. metadata.json->description
-msgid ""
-"A retro 2D platformer health bar in the panel that fills up from Monday to "
-"Friday, when your weekly goals are complete."
-msgstr ""
-"Une barre de vie rétro, façon jeu de plateforme 2D, dans le panneau. Elle se "
-"remplit du lundi au vendredi, quand vos objectifs de la semaine sont "
-"atteints."
+msgid "A retro 2D platformer health bar in the panel that fills up from Monday to Friday, when your weekly goals are complete."
+msgstr "Une barre de vie rétro, façon jeu de plateforme 2D, dans le panneau. Elle se remplit du lundi au vendredi, quand vos objectifs de la semaine sont atteints."
+
+#. settings-schema.json->section-schedule->title
+msgid "Work schedule"
+msgstr "Horaires de travail"
+
+#. settings-schema.json->section-appearance->title
+msgid "Bar appearance"
+msgstr "Apparence de la barre"
+
+#. settings-schema.json->section-colors->title
+msgid "Colors"
+msgstr "Couleurs"
+
+#. settings-schema.json->section-reset->title
+msgid "Reset"
+msgstr "Réinitialisation"
+
+#. settings-schema.json->work-days->units
+msgid "days"
+msgstr "jours"
+
+#. settings-schema.json->work-days->description
+msgid "Work days per week"
+msgstr "Jours travaillés par semaine"
+
+#. settings-schema.json->work-days->tooltip
+msgid "Number of segments in the bar. 5 means Monday to Friday."
+msgstr "Nombre de segments de la barre. 5 signifie du lundi au vendredi."
+
+#. settings-schema.json->day-start-hour->units
+#. settings-schema.json->day-end-hour->units
+#. settings-schema.json->last-day-end-hour->units
+msgid "h"
+msgstr "h"
+
+#. settings-schema.json->day-start-hour->description
+msgid "Day starts at"
+msgstr "La journée commence à"
+
+#. settings-schema.json->day-start-hour->tooltip
+msgid "Before this hour a day counts as empty. Use 0 to count from midnight."
+msgstr "Avant cette heure, la journée compte comme vide. Utilisez 0 pour compter à partir de minuit."
+
+#. settings-schema.json->day-end-hour->description
+msgid "Day is complete at"
+msgstr "La journée est complète à"
+
+#. settings-schema.json->day-end-hour->tooltip
+msgid "After this hour a day counts as full. Use 24 to count until midnight."
+msgstr "Après cette heure, la journée compte comme complète. Utilisez 24 pour compter jusqu’à minuit."
+
+#. settings-schema.json->last-day-end-hour->description
+msgid "Last work day ends at"
+msgstr "Le dernier jour travaillé se termine à"
+
+#. settings-schema.json->last-day-end-hour->tooltip
+msgid "The weekly goal is reached at this hour on the last work day (Friday by default). Keep it later than the day start hour."
+msgstr "L’objectif de la semaine est atteint à cette heure le dernier jour travaillé (le vendredi par défaut). Elle doit être postérieure à l’heure de début de journée."
+
+#. settings-schema.json->segment-width->units
+msgid "px"
+msgstr "px"
+
+#. settings-schema.json->segment-width->description
+msgid "Segment width"
+msgstr "Largeur des segments"
+
+#. settings-schema.json->segment-width->tooltip
+msgid "Width of each day segment in the bar."
+msgstr "Largeur du segment de chaque jour dans la barre."
+
+#. settings-schema.json->update-interval->units
+msgid "s"
+msgstr "s"
+
+#. settings-schema.json->update-interval->description
+msgid "Refresh interval"
+msgstr "Intervalle d’actualisation"
+
+#. settings-schema.json->update-interval->tooltip
+msgid "How often the bar updates."
+msgstr "Fréquence de mise à jour de la barre."
+
+#. settings-schema.json->mid-threshold->units
+#. settings-schema.json->high-threshold->units
+msgid "%"
+msgstr "%"
+
+#. settings-schema.json->mid-threshold->description
+msgid "Turns yellow at"
+msgstr "Passe au jaune à"
+
+#. settings-schema.json->mid-threshold->tooltip
+msgid "Total weekly progress where the bar changes from red to yellow. Keep it below the green threshold."
+msgstr "Progression totale de la semaine à laquelle la barre passe du rouge au jaune. Elle doit rester inférieure au seuil du vert."
+
+#. settings-schema.json->high-threshold->description
+msgid "Turns green at"
+msgstr "Passe au vert à"
+
+#. settings-schema.json->high-threshold->tooltip
+msgid "Total weekly progress where the bar changes to green. Keep it above the yellow threshold."
+msgstr "Progression totale de la semaine à laquelle la barre passe au vert. Elle doit rester supérieure au seuil du jaune."
+
+#. settings-schema.json->fill-low-color->description
+msgid "Fill color: low progress"
+msgstr "Couleur de remplissage : progression faible"
+
+#. settings-schema.json->fill-low-color->tooltip
+msgid "Color of the fill while progress is below the yellow threshold."
+msgstr "Couleur du remplissage tant que la progression est sous le seuil du jaune."
+
+#. settings-schema.json->fill-mid-color->description
+msgid "Fill color: mid progress"
+msgstr "Couleur de remplissage : progression moyenne"
+
+#. settings-schema.json->fill-mid-color->tooltip
+msgid "Color of the fill between the yellow and green thresholds."
+msgstr "Couleur du remplissage entre les seuils du jaune et du vert."
+
+#. settings-schema.json->fill-high-color->description
+msgid "Fill color: high progress"
+msgstr "Couleur de remplissage : progression élevée"
+
+#. settings-schema.json->fill-high-color->tooltip
+msgid "Color of the fill from the green threshold until the goal."
+msgstr "Couleur du remplissage du seuil du vert jusqu’à l’objectif."
+
+#. settings-schema.json->goal-color->description
+msgid "Goal color"
+msgstr "Couleur de l’objectif"
+
+#. settings-schema.json->goal-color->tooltip
+msgid "Color of the star and the GOAL! message when the week is complete."
+msgstr "Couleur de l’étoile et du message OBJECTIF ! quand la semaine est terminée."
+
+#. settings-schema.json->restore-defaults->description
+msgid "Restore default values"
+msgstr "Restaurer les valeurs par défaut"
+
+#. settings-schema.json->restore-defaults->tooltip
+msgid "Set every option back to its original value: schedule, bar appearance and colors."
+msgstr "Rétablit toutes les options à leur valeur d’origine : horaires, apparence de la barre et couleurs."

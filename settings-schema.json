@@ -5,7 +5,7 @@
         "page-general": {
             "type": "page",
             "title": "Week HP",
-            "sections": ["section-schedule", "section-appearance", "section-colors"]
+            "sections": ["section-schedule", "section-appearance", "section-colors", "section-reset"]
         },
         "section-schedule": {
             "type": "section",
@@ -21,6 +21,11 @@
             "type": "section",
             "title": "Colors",
             "keys": ["fill-low-color", "fill-mid-color", "fill-high-color", "goal-color"]
+        },
+        "section-reset": {
+            "type": "section",
+            "title": "Reset",
+            "keys": ["restore-defaults"]
         }
     },
 
@@ -129,5 +134,11 @@
         "default": "#ffd700",
         "description": "Goal color",
         "tooltip": "Color of the star and the GOAL! message when the week is complete."
+    },
+    "restore-defaults": {
+        "type": "button",
+        "description": "Restore default values",
+        "callback": "on_restore_defaults_clicked",
+        "tooltip": "Set every option back to its original value: schedule, bar appearance and colors."
     }
 }

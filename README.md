@@ -81,6 +81,9 @@ Right-click the applet and choose **Configure...** (or open **Applets**, select
 
 Changes are applied immediately, without restarting Cinnamon.
 
+To go back to the original configuration, press **Restore default values** at
+the bottom of the dialog.
+
 ## License
 
 [GPL-2.0-or-later](LICENSE)
