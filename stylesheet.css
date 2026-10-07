@@ -9,6 +9,7 @@
     color: #ff4d6d;
 }
 
+/* The goal color is overridden from the settings dialog */
 .week-hp-icon.complete {
     color: #ffd700;
 }
@@ -22,14 +23,16 @@
     border-radius: 0;
 }
 
-/* Each segment is one day; the empty part stays dark */
+/* Each segment is one day; the empty part stays dark.
+   The width is overridden from the settings dialog (applet.js) */
 .week-hp-segment {
     width: 14px;
     height: 10px;
     background-color: #3a3a3a;
 }
 
-/* Segment fill; its width is set from applet.js */
+/* Segment fill; its width and color are set from applet.js,
+   the colors below are only the fallback */
 .week-hp-fill {
     height: 10px;
     background-color: #e63946;
