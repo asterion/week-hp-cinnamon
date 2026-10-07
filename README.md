@@ -68,11 +68,18 @@ Right-click the applet and choose **Remove**, then delete its folder:
 rm -rf ~/.local/share/cinnamon/applets/week-hp@asterion
 ```
 
-## Customize your hours
+## Customize it
 
-Working hours are set at the top of [`weekProgress.js`](weekProgress.js):
-`DAY_START_HOUR`, `DAY_END_HOUR` and `FRIDAY_END_HOUR`.
-Restart Cinnamon with **Ctrl+Alt+Esc** after changing them.
+Right-click the applet and choose **Configure...** (or open **Applets**, select
+**Week HP** and press the gear button) to edit every parameter graphically:
+
+- **Work schedule**: work days per week, when a day starts, when it counts as
+  complete, and when the last work day ends (Friday by default).
+- **Bar appearance**: segment width, refresh interval, and the progress
+  thresholds where the bar turns yellow and green.
+- **Colors**: the fill color for each progress level and the goal color.
+
+Changes are applied immediately, without restarting Cinnamon.
 
 ## License
 

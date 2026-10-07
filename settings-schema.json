@@ -1,0 +1,133 @@
+{
+    "layout": {
+        "type": "layout",
+        "pages": ["page-general"],
+        "page-general": {
+            "type": "page",
+            "title": "Week HP",
+            "sections": ["section-schedule", "section-appearance", "section-colors"]
+        },
+        "section-schedule": {
+            "type": "section",
+            "title": "Work schedule",
+            "keys": ["work-days", "day-start-hour", "day-end-hour", "last-day-end-hour"]
+        },
+        "section-appearance": {
+            "type": "section",
+            "title": "Bar appearance",
+            "keys": ["segment-width", "update-interval", "mid-threshold", "high-threshold"]
+        },
+        "section-colors": {
+            "type": "section",
+            "title": "Colors",
+            "keys": ["fill-low-color", "fill-mid-color", "fill-high-color", "goal-color"]
+        }
+    },
+
+    "work-days": {
+        "type": "spinbutton",
+        "default": 5,
+        "min": 1,
+        "max": 7,
+        "step": 1,
+        "units": "days",
+        "description": "Work days per week",
+        "tooltip": "Number of segments in the bar. 5 means Monday to Friday."
+    },
+    "day-start-hour": {
+        "type": "spinbutton",
+        "default": 9,
+        "min": 0,
+        "max": 24,
+        "step": 1,
+        "units": "h",
+        "description": "Day starts at",
+        "tooltip": "Before this hour a day counts as empty. Use 0 to count from midnight."
+    },
+    "day-end-hour": {
+        "type": "spinbutton",
+        "default": 18,
+        "min": 0,
+        "max": 24,
+        "step": 1,
+        "units": "h",
+        "description": "Day is complete at",
+        "tooltip": "After this hour a day counts as full. Use 24 to count until midnight."
+    },
+    "last-day-end-hour": {
+        "type": "spinbutton",
+        "default": 13,
+        "min": 0,
+        "max": 24,
+        "step": 1,
+        "units": "h",
+        "description": "Last work day ends at",
+        "tooltip": "The weekly goal is reached at this hour on the last work day (Friday by default). Keep it later than the day start hour."
+    },
+    "segment-width": {
+        "type": "spinbutton",
+        "default": 14,
+        "min": 4,
+        "max": 40,
+        "step": 1,
+        "units": "px",
+        "description": "Segment width",
+        "tooltip": "Width of each day segment in the bar."
+    },
+    "update-interval": {
+        "type": "spinbutton",
+        "default": 60,
+        "min": 10,
+        "max": 600,
+        "step": 10,
+        "units": "s",
+        "description": "Refresh interval",
+        "tooltip": "How often the bar updates."
+    },
+    "mid-threshold": {
+        "type": "scale",
+        "default": 40,
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "digits": 0,
+        "units": "%",
+        "description": "Turns yellow at",
+        "tooltip": "Total weekly progress where the bar changes from red to yellow. Keep it below the green threshold."
+    },
+    "high-threshold": {
+        "type": "scale",
+        "default": 80,
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "digits": 0,
+        "units": "%",
+        "description": "Turns green at",
+        "tooltip": "Total weekly progress where the bar changes to green. Keep it above the yellow threshold."
+    },
+    "fill-low-color": {
+        "type": "colorchooser",
+        "default": "#e63946",
+        "description": "Fill color: low progress",
+        "tooltip": "Color of the fill while progress is below the yellow threshold."
+    },
+    "fill-mid-color": {
+        "type": "colorchooser",
+        "default": "#f4c430",
+        "description": "Fill color: mid progress",
+        "tooltip": "Color of the fill between the yellow and green thresholds."
+    },
+    "fill-high-color": {
+        "type": "colorchooser",
+        "default": "#3ddc55",
+        "description": "Fill color: high progress",
+        "tooltip": "Color of the fill from the green threshold until the goal."
+    },
+    "goal-color": {
+        "type": "colorchooser",
+        "default": "#ffd700",
+        "description": "Goal color",
+        "tooltip": "Color of the star and the GOAL! message when the week is complete."
+    }
+}
